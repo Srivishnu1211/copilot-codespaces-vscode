@@ -16,4 +16,10 @@ class Main
 }
 
 Output Format:
+
+1st	"daabcbaabcbc"	"abc"	"dabaabcbc"
+2nd	"dabaabcbc"	"abc"	"dababcbc"
+3rd	"dababcbc"	"abc"	"dabcbc"
+4th	"dabcbc"	"abc"	"dbc"
+
 dab
