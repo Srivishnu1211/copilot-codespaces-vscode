@@ -1,0 +1,19 @@
+// You are using Java
+import java.util.*;
+class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner x=new Scanner(System.in);
+        String a="daabcbaabcbc";
+        String b="abc";
+        while(a.contains(b))
+        {
+            a=a.replaceFirst(b,"");
+        }
+        System.out.print(a);
+    }
+}
+
+Output Format:
+dab
