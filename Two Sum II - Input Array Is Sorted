@@ -1,0 +1,28 @@
+import java.util.*;
+public class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int l = 0, r = numbers.length - 1;
+
+        while (l < r) {
+            int curSum = numbers[l] + numbers[r];
+
+            if (curSum > target) {
+                r--;
+            } else if (curSum < target) {
+                l++;
+            } else {
+                return new int[] { l + 1, r + 1 };
+            }
+        }
+        return new int[0];
+    }
+}
+
+Input:
+nums[]={2,5,7,15};
+target=9;
+Output: [1,2]
+l	r	numbers[l]	numbers[r]	curSum	Action
+0	3	2	15	2 + 15 = 17	Decrease r (too large)
+0	2	2	11	2 + 11 = 13	Decrease r (too large)
+0	1	2	7	2 + 7 = 9	Found Target! Return [1, 2]
