@@ -1,0 +1,33 @@
+// You are using Java
+import java.util.*;
+class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner x=new Scanner(System.in);
+        int n=6;
+        int a[]={0,1,0,3,2,3};
+        int b[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            b[i]=1;
+        }
+        \\ b[]={1,1,1,1,1,1}; 
+        for(int i=1;i<n;i++)
+        {
+            for(int j=0;j<i;j++)
+            {
+                if(a[i]>a[j] && b[i]<b[j]+1)
+                {
+                    b[i]=b[j]+1;
+                }
+            }
+        }
+        int max=1;
+        for(int i=0;i<n;i++)
+        {
+            max=Math.max(max,b[i]);
+        }
+        System.out.print(max);
+    }
+}
