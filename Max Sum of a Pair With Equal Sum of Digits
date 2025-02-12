@@ -1,0 +1,36 @@
+// You are using Java
+import java.util.*;
+class  Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner x=new Scanner(System.in);
+        int n=4;
+        int a[]={51,17,71,42};
+        int max=-1;
+        int maxval[]=new int[100];
+        for(int num:a)
+        {
+            int sum=0;
+            for(int t=num;t>0;t/=10)
+            {
+                sum+=t%10;
+            }
+            if(maxval[sum]>0)
+            {
+                max=Math.max(max,maxval[sum]+num);
+            }
+            maxval[sum]=Math.max(maxval[sum],num);
+        }
+        System.out.print(max);
+    }
+}
+
+
+Output: 93
+
+Number	Digit Sum	maxNumWithDigitSum[] before	Pair Exists?	maxPairSum	maxNumWithDigitSum[] after
+51	5+1=6	0	No	-1	maxNumWithDigitSum[6] = 51
+71	7+1=8	0	No	-1	maxNumWithDigitSum[8] = 71
+17	1+7=8	71	Yes (17+71)	88	maxNumWithDigitSum[8] = 71 (71 is larger)
+42	4+2=6	51	Yes (42+51)	93	maxNumWithDigitSum[6] = 51 (51 is larger)
